@@ -1,0 +1,4 @@
+INFO - Test started
+ERROR - Element not found
+PASS - Login successful
+ERROR - Timeout while waiting
