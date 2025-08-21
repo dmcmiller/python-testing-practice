@@ -1,10 +1,9 @@
-# Simulate reading a test log file and extract lines containing "ERROR"
-# Use file reading and basic string operations
-
-def extract_errors(file):
-    read_log = open(file)
-    for line in read_log:
-        if "ERROR" in line:
-            print(line)
-
-extract_errors("sample_log.txt")
+def extract_errors(file_path: str) -> list:
+    """
+    Reads a text file and returns a list of lines containing 'ERROR'
+    """
+    try:
+        with open(file_path, 'r') as f:
+            return [line.strip() for line in f if "ERROR" in line]
+    except FileNotFoundError:
+        return []

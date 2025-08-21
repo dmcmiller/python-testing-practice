@@ -1,10 +1,12 @@
-# Takes a list of test case IDs and verifies naming format (e.g., "TC_001")
-test_cases = ["TC_001", "001_TC", "TC_002", "TC3"]
-# Output: Which ones are valid
-
-def is_valid(case):
-    for case in test_cases:
-        if case.startswith("TC_") and len(case) == 6 and case[3:].isdigit():
-            return(case)
-        
-
+def is_valid(case: str) -> bool:
+    """
+    Returns True if the test case is valid:
+    - Starts with 'TC_'
+    - Followed by exactly 3 digits
+    """
+    if not case.startswith("TC_"):
+        return False
+    if len(case) != 6:
+        return False
+    digits = case[3:]
+    return digits.isdigit()
