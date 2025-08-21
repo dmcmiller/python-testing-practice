@@ -4,15 +4,16 @@
 
 results = ["pass", "fail", "pass", "pass", "fail"]
 
-total_number = 0
-total_pass = 0
-total_fail = 0
-for grade in results:
-    total_number +=1
-    if grade == 'pass':
-        total_pass += 1
-    else:
-        total_fail += 1
-pass_rate = (total_pass / total_number) * 100
+def summary(test_results):
+    total_number = 0
+    total_pass = 0
+    total_fail = 0
+    for grade in results:
+        total_number +=1
+        if grade == 'pass':
+            total_pass += 1
+        else:
+            total_fail += 1
+    pass_rate = (total_pass / total_number) * 100
 
-print(f"Total: {total_number} | Passed: {total_pass} | Pass Rate: {pass_rate} ")
+    print(f"Total: {total_number} | Passed: {total_pass} | Pass Rate: {pass_rate} ")
